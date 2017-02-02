@@ -45,7 +45,7 @@ def mpl_redraw_callback(event, tax):
 
 class TernaryAxesSubplot(object):
     """
-    Wrapper for python-ternary and matplotlib figure. Parameters for member
+    Wrapper for pyternary and matplotlib figure. Parameters for member
     functions simply pass through to ternary's functions with the same names.
     This class manages the matplotlib axes, the scale, and the boundary scale
     to ease the use of ternary plotting functions.
@@ -260,7 +260,7 @@ class TernaryAxesSubplot(object):
         ax = self.get_axes()
         scale = self.get_scale()
         lines.ticks(ax, scale, ticks=ticks, locations=locations,
-                    multiple=multiple, clockwise=clockwise, axis=axis, 
+                    multiple=multiple, clockwise=clockwise, axis=axis,
                     axes_colors=axes_colors, **kwargs)
 
     # Redrawing and resizing
@@ -315,7 +315,7 @@ class TernaryAxesSubplot(object):
                                          permutation=permutation, **kwargs)
 
     def heatmap(self, data, scale=None, cmap=None, scientific=False,
-                style='triangular', colorbar=True, colormap=True,
+                style='triangular', colorbar=None, colormap=True,
                 vmin=None, vmax=None, cbarlabel=None):
         permutation = self._permutation
         if not scale:
@@ -323,6 +323,7 @@ class TernaryAxesSubplot(object):
         if style.lower()[0] == 'd':
             self._boundary_scale = scale + 1
         ax = self.get_axes()
+
         heatmapping.heatmap(data, scale, cmap=cmap, style=style, ax=ax,
                             scientific=scientific, colorbar=colorbar,
                             permutation=permutation, colormap=colormap,

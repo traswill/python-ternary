@@ -19,7 +19,7 @@ classifiers = [
 ]
 
 setup(
-    name = "python-ternary",
+    name = "pyternary",
     version = "1.0",
     packages=['ternary'],
 
@@ -33,6 +33,6 @@ setup(
     keywords = "matplotlib ternary plotting",
     license = "MIT",
 
-    url = "https://github.com/marcharper/python-ternary",
-    download_url = "https://github.com/marcharper/python-ternary/tarball/0.1",
+    url = "https://github.com/marcharper/pyternary",
+    download_url = "https://github.com/marcharper/pyternary/tarball/0.1",
 )
